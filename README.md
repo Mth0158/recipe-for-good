@@ -1,14 +1,10 @@
 # Recipe for good
-It's dinner time ! 🍽️
+It's dinner time ! 🍽️<br>
 This application helps users find the most relevant recipes that they can prepare with the ingredients that they have at home
-
-**Table of contents**
-
-[[_TOC_]]
 
 ## Rails / Ruby version
 
-Current Rails version is 7.0.7.2
+Current Rails version is 7.0.7.2<br>
 Current Ruby version is 3.1.4
 
 ## System dependencies
@@ -19,7 +15,7 @@ There no dependencies outside of Rails.
 
 ### Environnement variables
 
-You have to use a .env file for the application configuration. Duplicate .env.example and customize it to suit your local setup. If you need adjustments for a specific environment, say development, create a .env.development file and override only the needed constants.
+You have to use a `.env` file for the application configuration. Duplicate `.env.example` and customize it to suit your local setup. If you need adjustments for a specific environment, say development, create a `.env.development` file and override only the needed constants.
 
 #### Rails / Ruby environment
 
@@ -34,7 +30,7 @@ You have to use a .env file for the application configuration. Duplicate .env.ex
  - `DATABASE_PASSWORD`=
 
 #### Application setting
- - `HOST` Application host, for url building
+ - `HOST`=localhost:3000
 
 ## Database creation
 

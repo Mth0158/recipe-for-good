@@ -18,10 +18,23 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+########## Layout cops
+
+Layout/ArgumentAlignment:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+
 ########## Lint cops
 
 Lint/EmptyFile:
   Enabled: false
+
+########## Metrics cops
+
+Metrics/MethodLength:
+  Max: 15
 
 ########## Style cops
 
@@ -36,3 +49,13 @@ Style/FrozenStringLiteralComment:
 
 Style/StringLiterals:
   Enabled: false
+
+########## Rspec cops
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 15
+
+RSpec/ExampleLength:
+  Max: 15
