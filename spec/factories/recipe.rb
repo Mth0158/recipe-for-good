@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :recipe do
     title { Faker::Food.unique.dish }
     cook_time { rand(1..30) }
-    prep_time { cook_time + rand(1..20) }
+    prep_time { rand(1..20) }
     ingredients do
       [
         "1 (2 pound) ham steak, cut into 1-inch pieces",

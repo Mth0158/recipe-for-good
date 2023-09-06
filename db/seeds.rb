@@ -13,7 +13,6 @@ data_array = JSON.parse(file)
 Extractors::FakerIngredients.extract(data_array)
 
 puts "> Recipes:                      #{Recipe.count}"
-puts ">> Vegetarian recipes:          #{Recipe.vegetarian.count}"
 puts "> Ingredients:                  #{Ingredient.count}"
 puts ">> Featured ingredients:        #{Ingredient.featured.count}"
 puts "\n---- Seed done in #{(Time.current - start_time).truncate(2)} s ----"

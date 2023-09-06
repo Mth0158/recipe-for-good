@@ -25,6 +25,6 @@ module RecipeForGood
     config.api_only = true
 
     # Loads all lib files
-    config.autoload_paths += %W[#{config.root}/lib]
+    config.autoload_paths += %W[#{config.root}/services #{config.root}/lib]
   end
 end

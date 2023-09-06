@@ -28,18 +28,4 @@ class Recipe < ApplicationRecord
     format: {
       with: VALID_URL_REGEX
     }
-  validates :is_vegetarian,
-    inclusion: [true, false]
-
-  before_create :set_is_vegetarian
-
-  scope :vegetarian, -> { where(is_vegetarian: true) }
-
-  private
-
-  def set_is_vegetarian
-    self.is_vegetarian = ingredients.none? do |ingredient|
-      ingredient.match?(/beef|pork|lamb|venison|bison|veal|duck|sausage|meat|chicken|lard|turkey|bacon|ham|ground/i)
-    end
-  end
 end
