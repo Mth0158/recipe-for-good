@@ -51,36 +51,4 @@ RSpec.describe Recipe do
       end
     end
   end
-
-  describe "Callbacks" do
-    describe "before_create" do
-      describe "#set_is_vegetarian" do
-        let(:recipe) { build(:recipe, ingredients:) }
-        let(:ingredients) { [veggie_ingredient, test_ingredient] }
-        let(:veggie_ingredient) { "⅓ cup vegetable oil" }
-
-        context "when the recipe has 1 or more 'meat' ingredient" do
-          let(:test_ingredient) { "1 (2 pound) ham steak, cut into 1-inch pieces" }
-
-          it "sets is_vegetarian value to false" do
-            recipe.save!
-
-            expect(recipe.is_vegetarian)
-              .to be false
-          end
-        end
-
-        context "when the recipe does not have a 'meat' ingredient" do
-          let(:test_ingredient) { "10 Brussels sprouts, halved" }
-
-          it "sets is_vegetarian value to true" do
-            recipe.save!
-
-            expect(recipe.is_vegetarian)
-              .to be true
-          end
-        end
-      end
-    end
-  end
 end

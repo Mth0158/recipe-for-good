@@ -14,7 +14,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-# gem "jbuilder"
+gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -40,6 +40,9 @@ gem "rack-cors", "~> 0.4.0"
 # Use .env file for configuration
 gem "dotenv-rails", "~> 2.1", require: "dotenv/rails-now"
 
+# Paginate resources
+gem "pagy", "~> 6.0"
+
 # Ruby linter
 gem "rubocop", "~> 1.56", require: false
 gem "rubocop-rails", "~> 2.20", require: false
@@ -52,10 +55,10 @@ group :development, :test do
   gem "faker", "~> 3.1"
   gem "rspec-rails", "~> 6.0.1"
   gem "shoulda-matchers", "~> 5.3.0"
+  gem "rails-controller-testing", "~> 1.0.4"
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-

@@ -23,6 +23,7 @@ class Ingredient < ApplicationRecord
   before_create :set_is_featured
 
   scope :featured, -> { where(is_featured: true) }
+  scope :with_name_containing, ->(name) { where("name ILIKE ?", "%#{name}%") }
 
   private
 
