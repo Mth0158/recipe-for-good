@@ -7,9 +7,13 @@ This application helps users find the most relevant recipes that they can prepar
 Current Rails version is 7.0.7.2<br>
 Current Ruby version is 3.1.4
 
+## React version
+
+Current React version is 18.2.0
+
 ## System dependencies
 
-There no dependencies outside of Rails.
+There no dependencies outside of Rails & React.
 
 ## Configuration
 
@@ -23,6 +27,10 @@ You have to use a `.env` file for the application configuration. Duplicate `.env
  - `RAILS_ENV`=development
  - `RAKE_ENV`=development
 
+#### React environment
+
+ - `VITE_API_URL`=http://localhost:3000/api/v1
+
 #### PostgresSQL database settings
 
  - `DATABASE_HOST`=localhost
@@ -30,7 +38,7 @@ You have to use a `.env` file for the application configuration. Duplicate `.env
  - `DATABASE_PASSWORD`=
 
 #### Application setting
- - `HOST`=localhost:3000
+ - `HOST`=http://127.0.0.1:5173
 
 ## Database creation
 
@@ -60,7 +68,11 @@ It is also possible to use our custom rake task `rails db:reseed` if you want to
 
 ## How to run the test suite
 
-There will be a test suite a bit later
+Run the test suite with Rspec:
+
+```
+$ bundle exec rspec spec
+```
 
 ## Services (job queues, cache servers, search engines, etc.)
 
@@ -68,4 +80,4 @@ No services are required.
 
 ## Deployment instructions
 
-There will be a CI/CD pipeline a bit later
+There is a CI/CD pipeline running Rspec tests for each individual PR, but nothing to deploy automatically yet.
