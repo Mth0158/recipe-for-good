@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Ruby version
-ruby File.read('.ruby-version').strip
+ruby "3.1.4" # TODO: return it to File.read('./.ruby-version').strip
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
@@ -61,4 +61,9 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "dockerfile-rails", ">= 1.5"
 end
+
+# Monitor production logs
+gem "sentry-rails", "~> 5.11"
+gem "sentry-ruby", "~> 5.11"
