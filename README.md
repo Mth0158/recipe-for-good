@@ -80,4 +80,7 @@ No services are required.
 
 ## Deployment instructions
 
-There is a CI/CD pipeline running Rspec tests for each individual PR, but nothing to deploy automatically yet.
+There is a CI/CD pipeline that:
+- runs Rspec tests for each individual PR
+- deploy our app to our fly.io when merging on `main` branch
+
