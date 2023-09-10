@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for recipes-for-good on 2023-09-10T10:52:24+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "recipes-for-good"
+primary_region = "cdg"
+console_command = "/rails/bin/rails console"
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[statics]]
+  guest_path = "/rails/recipes-react/public"
+  url_prefix = "/"
