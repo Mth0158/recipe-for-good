@@ -33,11 +33,6 @@ RSpec.describe Api::V1::IngredientsController, type: :request do
         .to eq(ingredients)
     end
 
-    it "paginates the results with Pagy" do
-      expect(assigns(:pagy))
-        .to be_present
-    end
-
     context "with the featured param" do
       let(:params) { { featured: true } }
 

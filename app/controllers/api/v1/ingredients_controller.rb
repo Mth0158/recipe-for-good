@@ -2,15 +2,13 @@ class Api::V1::IngredientsController < ApplicationController
   include Pagy::Backend
 
   def index
-    ingredients = if filter_params[:featured].present?
-                    Ingredient.featured
-                  elsif filter_params[:query].present?
-                    Ingredient.with_name_containing(filter_params[:query])
-                  else
-                    Ingredient.all
-                  end
-    @pagy, @ingredients = pagy(ingredients)
-    @pagy_metadata = pagy_metadata(@pagy)
+    @ingredients = if filter_params[:featured].present?
+                     Ingredient.featured
+                   elsif filter_params[:query].present?
+                     Ingredient.with_name_containing(filter_params[:query])
+                   else
+                     Ingredient.all
+                   end
   end
 
   private
