@@ -52,10 +52,19 @@ function RecipesList() {
     return <p>Error: {error.message}</p>
   }
 
+  if (recipes.length === 0) {
+    return (
+      <>
+        <Link to="/">Back to search</Link>
+        <h2>We do not have any recipe matching at least one of the ingredients you entered 😕</h2>
+      </>
+    )
+  }
+
   return (
     <>
       <Link to="/">Back to search</Link>
-      <h2>We found {paging.count} recipes matching the ingredients you have!</h2>
+      <h2>We found {paging.count} recipes matching at least one of the ingredients you have!</h2>
 
       <div className="mt-3">
         {ingredients.map((ingredient) => (
@@ -89,6 +98,11 @@ function RecipesList() {
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className="mt-4">
+        <p>We only display the 20 most relevant recipes for now 👨‍🍳</p>
+        <p>We will add access to all the matching recipes in the next development 💻</p>
       </div>
     </>
   )
